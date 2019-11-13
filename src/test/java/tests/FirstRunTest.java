@@ -24,22 +24,14 @@ public class FirstRunTest extends AbstractStopwatchTest {
         introductionPageSteps = new IntroductionPageSteps(driver);
     }
 
-    @Test(description = "[TC1] Allow Device Permission", priority = 1)
-    public void allowPermission(){
+    @Test(description = "First run of stopwatch")
+    public void firstRun() throws InterruptedException {
         permissionPageSteps.checkPageDisplayed().tapAllowButton();
-    }
-
-    @Test(description = "[TC2] Tap through the Introduction page", priority = 2)
-    public void goThroughIntroduction(){
         introductionPageSteps.checkPageDisplayed().tapLaterButton();
-    }
-
-    @Test(description = "[TC3] Run a stopwatch for 10 sec", priority = 3)
-    public void runStopwatch() throws InterruptedException {
         stopwatchPageSteps
                 .checkPageDisplayed()
                 .tapMainButton();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         stopwatchPageSteps.tapMainButton();
         System.out.println(stopwatchPageSteps.getTime());
     }
