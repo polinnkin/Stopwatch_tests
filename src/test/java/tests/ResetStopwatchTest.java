@@ -8,8 +8,9 @@ import steps.IntroductionPageSteps;
 import steps.PermissionPageSteps;
 import steps.StopwatchPageSteps;
 
+import static org.testng.Assert.assertEquals;
 
-public class FirstRunTest extends AbstractStopwatchTest {
+public class ResetStopwatchTest extends AbstractStopwatchTest {
 
     private CommonSteps commonSteps;
     private StopwatchPageSteps stopwatchPageSteps;
@@ -24,16 +25,18 @@ public class FirstRunTest extends AbstractStopwatchTest {
         introductionPageSteps = new IntroductionPageSteps(driver);
     }
 
-    @Test(description = "First run of stopwatch")
-    public void firstRun() throws InterruptedException {
+    @Test(description = "Reset stopwatch")
+    public void resetStopwatch() throws InterruptedException {
         permissionPageSteps.checkPageDisplayed().tapAllowButton();
         introductionPageSteps.checkPageDisplayed().tapLaterButton();
         stopwatchPageSteps
                 .checkPageDisplayed()
                 .tapMainButton();
-        Thread.sleep(2000);
         stopwatchPageSteps.tapMainButton();
         System.out.println(stopwatchPageSteps.getTime());
+        stopwatchPageSteps.longPressMainButton();
+        System.out.println(stopwatchPageSteps.getTime());
+        assertEquals("00:00.00", stopwatchPageSteps.getTime());
     }
 
     @AfterMethod

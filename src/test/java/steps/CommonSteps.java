@@ -15,7 +15,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
  */
 public class CommonSteps extends AbstractCommonStep {
 
-    private WebDriverWait wait = new WebDriverWait(driver, 10);
+    private WebDriverWait wait = new WebDriverWait(driver, 5);
 
     public CommonSteps(AndroidDriver driver) { super(driver); }
 

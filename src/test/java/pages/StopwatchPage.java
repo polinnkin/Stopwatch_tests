@@ -18,5 +18,4 @@ public class StopwatchPage extends AbstractPage {
     public MobileElement getStopwatchBox() {
         return stopwatchBox;
     }
-
 }

@@ -2,7 +2,8 @@
 <suite name="My test suite">
     <test name="testing">
         <classes>
-            <class name="tests.FirstRunTest"/>
+            <class name="tests.RunStopwatchTest"/>
+            <class name="tests.ResetStopwatchTest"/>
         </classes>
     </test>
 </suite>
