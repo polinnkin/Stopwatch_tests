@@ -7,7 +7,7 @@ import steps.IntroductionPageSteps;
 import steps.PermissionPageSteps;
 import steps.StopwatchPageSteps;
 
-public class RunStopwatchTest extends AbstractStopwatchTest {
+public class ChangeShapeToSquareTest extends AbstractStopwatchTest {
 
     private StopwatchPageSteps stopwatchPageSteps;
     private PermissionPageSteps permissionPageSteps;
@@ -21,11 +21,12 @@ public class RunStopwatchTest extends AbstractStopwatchTest {
     }
 
     @Test(description = "Run a stopwatch")
-    public void runStopwatch() throws InterruptedException {
+    public void changeToSquare() throws InterruptedException {
         permissionPageSteps.checkPageDisplayed().tapAllowButton();
         introductionPageSteps.checkPageDisplayed().tapLaterButton();
-        stopwatchPageSteps.runStopwatch();
-        System.out.println(stopwatchPageSteps.getTime());
+        stopwatchPageSteps.tapSettingsButton();
+        stopwatchPageSteps.tapSquareButton();
+        Thread.sleep(1000);
     }
 
     @AfterMethod

@@ -23,6 +23,8 @@ public class StopwatchPageSteps extends AbstractStep {
     public StopwatchPageSteps(AndroidDriver driver) {
         super(driver);
     }
+    private PermissionPageSteps permissionPageSteps = new PermissionPageSteps(driver);
+    private IntroductionPageSteps introductionPageSteps = new IntroductionPageSteps(driver);
 
     @Override
     @Step("The main stopwatch page is opened")
@@ -50,4 +52,43 @@ public class StopwatchPageSteps extends AbstractStep {
 
     @Step("Get time from a stopwatch box")
     public String getTime(){ return stopwatchPage.getStopwatchBox().getText(); }
+
+    @Step("Run and stop stopwatch")
+    public String runStopwatch(){
+        this.checkPageDisplayed().tapMainButton();
+        this.tapMainButton();
+        return this.getTime();
+    }
+
+    @Step("Open settings")
+    public StopwatchPageSteps tapSettingsButton(){
+        stopwatchPage.getSettingsButton().click();
+        return this;
+    }
+
+    @Step("Change a stopwatch shape to square")
+    public StopwatchPageSteps tapSquareButton(){
+        stopwatchPage.getSquareButton().click();
+        return this;
+    }
+
+    @Step("Change a stopwatch shape to round")
+    public StopwatchPageSteps tapRoundButton(){
+        stopwatchPage.getRoundButton().click();
+        return this;
+    }
+
+    @Step("Change a stopwatch shape to  rounded square")
+    public StopwatchPageSteps tapRoundedSquareButton(){
+        stopwatchPage.getRoundedSquareButton().click();
+        return this;
+    }
+
+    @Step("Change a stopwatch shape to full screen")
+    public StopwatchPageSteps tapFullScreenButton(){
+        stopwatchPage.getFullScreenButton().click();
+        return this;
+    }
+
+
 }

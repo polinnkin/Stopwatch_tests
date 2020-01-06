@@ -4,6 +4,11 @@
         <classes>
             <class name="tests.RunStopwatchTest"/>
             <class name="tests.ResetStopwatchTest"/>
+            <class name="tests.RunStopwatchTwiceNoResetTest"/>
+            <class name="tests.ChangeShapeToSquareTest"/>
+            <class name="tests.ChangeShapeToRoundTest"/>
+            <class name="tests.ChangeShapeToRoundedSquareTest"/>
+            <class name="tests.ChangeShapeToFullScreenTest"/>
         </classes>
     </test>
 </suite>

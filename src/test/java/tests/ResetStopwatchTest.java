@@ -12,7 +12,6 @@ import static org.testng.Assert.assertEquals;
 
 public class ResetStopwatchTest extends AbstractStopwatchTest {
 
-    private CommonSteps commonSteps;
     private StopwatchPageSteps stopwatchPageSteps;
     private PermissionPageSteps permissionPageSteps;
     private IntroductionPageSteps introductionPageSteps;
@@ -20,7 +19,6 @@ public class ResetStopwatchTest extends AbstractStopwatchTest {
     @BeforeTest
     public void setUp() {
         stopwatchPageSteps = new StopwatchPageSteps(driver);
-        commonSteps = new CommonSteps(driver);
         permissionPageSteps = new PermissionPageSteps(driver);
         introductionPageSteps = new IntroductionPageSteps(driver);
     }
@@ -29,10 +27,7 @@ public class ResetStopwatchTest extends AbstractStopwatchTest {
     public void resetStopwatch() throws InterruptedException {
         permissionPageSteps.checkPageDisplayed().tapAllowButton();
         introductionPageSteps.checkPageDisplayed().tapLaterButton();
-        stopwatchPageSteps
-                .checkPageDisplayed()
-                .tapMainButton();
-        stopwatchPageSteps.tapMainButton();
+        stopwatchPageSteps.runStopwatch();
         System.out.println(stopwatchPageSteps.getTime());
         stopwatchPageSteps.longPressMainButton();
         System.out.println(stopwatchPageSteps.getTime());

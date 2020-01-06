@@ -7,7 +7,7 @@ import steps.IntroductionPageSteps;
 import steps.PermissionPageSteps;
 import steps.StopwatchPageSteps;
 
-public class RunStopwatchTest extends AbstractStopwatchTest {
+public class RunStopwatchTwiceNoResetTest extends AbstractStopwatchTest {
 
     private StopwatchPageSteps stopwatchPageSteps;
     private PermissionPageSteps permissionPageSteps;
@@ -24,6 +24,8 @@ public class RunStopwatchTest extends AbstractStopwatchTest {
     public void runStopwatch() throws InterruptedException {
         permissionPageSteps.checkPageDisplayed().tapAllowButton();
         introductionPageSteps.checkPageDisplayed().tapLaterButton();
+        stopwatchPageSteps.runStopwatch();
+        System.out.println(stopwatchPageSteps.getTime());
         stopwatchPageSteps.runStopwatch();
         System.out.println(stopwatchPageSteps.getTime());
     }
