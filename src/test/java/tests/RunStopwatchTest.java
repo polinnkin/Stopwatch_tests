@@ -20,7 +20,7 @@ public class RunStopwatchTest extends AbstractStopwatchTest {
         introductionPageSteps = new IntroductionPageSteps(driver);
     }
 
-    @Test(description = "Run a stopwatch")
+    @Test(description = " [TC1] Run a stopwatch")
     public void runStopwatch() throws InterruptedException {
         permissionPageSteps.checkPageDisplayed().tapAllowButton();
         introductionPageSteps.checkPageDisplayed().tapLaterButton();

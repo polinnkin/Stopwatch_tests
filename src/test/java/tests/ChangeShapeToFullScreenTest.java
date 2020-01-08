@@ -20,7 +20,7 @@ public class ChangeShapeToFullScreenTest extends AbstractStopwatchTest {
         introductionPageSteps = new IntroductionPageSteps(driver);
     }
 
-    @Test(description = "Run a stopwatch")
+    @Test(description = " [TC 7] Change shape the stopwatch screen to full screen")
     public void changeToSquare() throws InterruptedException {
         permissionPageSteps.checkPageDisplayed().tapAllowButton();
         introductionPageSteps.checkPageDisplayed().tapLaterButton();

@@ -7,7 +7,7 @@ import steps.IntroductionPageSteps;
 import steps.PermissionPageSteps;
 import steps.StopwatchPageSteps;
 
-public class ChangeShapeToRoundedSquareTest extends AbstractStopwatchTest {
+public class ChangeBackgroundColorTest extends AbstractStopwatchTest {
 
     private StopwatchPageSteps stopwatchPageSteps;
     private PermissionPageSteps permissionPageSteps;
@@ -20,12 +20,12 @@ public class ChangeShapeToRoundedSquareTest extends AbstractStopwatchTest {
         introductionPageSteps = new IntroductionPageSteps(driver);
     }
 
-    @Test(description = " [TC6] Change shape of the stopwatch screen to rounded square")
+    @Test(description = " [TC 8] Change background mode")
     public void changeToSquare() throws InterruptedException {
         permissionPageSteps.checkPageDisplayed().tapAllowButton();
         introductionPageSteps.checkPageDisplayed().tapLaterButton();
         stopwatchPageSteps.tapSettingsButton();
-        stopwatchPageSteps.tapRoundedSquareButton();
+        stopwatchPageSteps.tapBackgroundButton();
         Thread.sleep(1000);
     }
 

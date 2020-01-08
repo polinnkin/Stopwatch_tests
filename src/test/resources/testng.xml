@@ -9,6 +9,9 @@
             <class name="tests.ChangeShapeToRoundTest"/>
             <class name="tests.ChangeShapeToRoundedSquareTest"/>
             <class name="tests.ChangeShapeToFullScreenTest"/>
+            <class name="tests.ChangeBackgroundColorTest"/>
+            <class name="tests.ChangeColorOfDigitsTest"/>
+            <class name="tests.ChangeStopwatchColorTest"/>
         </classes>
     </test>
 </suite>

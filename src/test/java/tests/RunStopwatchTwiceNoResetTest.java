@@ -20,7 +20,7 @@ public class RunStopwatchTwiceNoResetTest extends AbstractStopwatchTest {
         introductionPageSteps = new IntroductionPageSteps(driver);
     }
 
-    @Test(description = "Run a stopwatch")
+    @Test(description = "[TC3]Run the stopwatch starting with a point of time when the previous stopwatch was ended")
     public void runStopwatch() throws InterruptedException {
         permissionPageSteps.checkPageDisplayed().tapAllowButton();
         introductionPageSteps.checkPageDisplayed().tapLaterButton();

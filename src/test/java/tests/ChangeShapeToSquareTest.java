@@ -20,7 +20,7 @@ public class ChangeShapeToSquareTest extends AbstractStopwatchTest {
         introductionPageSteps = new IntroductionPageSteps(driver);
     }
 
-    @Test(description = "Run a stopwatch")
+    @Test(description = " [TC4] Change shape of the stopwatch screen to square")
     public void changeToSquare() throws InterruptedException {
         permissionPageSteps.checkPageDisplayed().tapAllowButton();
         introductionPageSteps.checkPageDisplayed().tapLaterButton();

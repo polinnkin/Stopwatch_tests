@@ -23,7 +23,7 @@ public class ResetStopwatchTest extends AbstractStopwatchTest {
         introductionPageSteps = new IntroductionPageSteps(driver);
     }
 
-    @Test(description = "Reset stopwatch")
+    @Test(description = " [TC2] Reset stopwatch")
     public void resetStopwatch() throws InterruptedException {
         permissionPageSteps.checkPageDisplayed().tapAllowButton();
         introductionPageSteps.checkPageDisplayed().tapLaterButton();

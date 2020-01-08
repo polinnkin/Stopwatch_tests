@@ -4,6 +4,8 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
+import java.util.Random;
+
 /**
  * A page representing the main stopwatch page
  */
@@ -12,6 +14,20 @@ public class StopwatchPage extends AbstractPage {
     public static final String shapeViewGroupXpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/" +
             "android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.LinearLayout[1]/" +
             "android.widget.LinearLayout[3]/android.widget.LinearLayout";
+
+    public static final String colorPaletteXpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/" +
+            "android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.LinearLayout[1]/" +
+            "android.widget.LinearLayout[1]/android.widget.LinearLayout";
+
+    public static final String digitsColorPaletteXpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/" +
+            "android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.LinearLayout[1]/" +
+            "android.widget.LinearLayout[2]/android.widget.LinearLayout[8";
+
+    public static final String color1Xpath = colorPaletteXpath + "[80]";
+
+    public static final String color2Xpath = colorPaletteXpath + "[160]";
+
+    public static final String color3Xpath = colorPaletteXpath + "[310]";
 
     public static final String squareXpath = shapeViewGroupXpath + "[1]/android.widget.ImageView";
 
@@ -39,6 +55,21 @@ public class StopwatchPage extends AbstractPage {
     @AndroidFindBy(xpath = fullScreenXpath)
     private MobileElement fullScreenButton;
 
+    @AndroidFindBy(id = "toplab18.app.simpleststopwatch2:id/FLDayMode")
+    private MobileElement backgroundButton;
+
+    @AndroidFindBy(xpath = color1Xpath)
+    private MobileElement colorPaletteElement1;
+
+    @AndroidFindBy(xpath = color2Xpath)
+    private MobileElement colorPaletteElement2;
+
+    @AndroidFindBy(xpath = color3Xpath)
+    private MobileElement colorPaletteElement3;
+
+    @AndroidFindBy(xpath = digitsColorPaletteXpath)
+    private MobileElement digitsColorPaletteElement;
+
     public StopwatchPage(AndroidDriver driver) {
         super(driver);
     }
@@ -51,11 +82,39 @@ public class StopwatchPage extends AbstractPage {
         return settingsButton;
     }
 
-    public MobileElement getSquareButton() { return squareButton; }
+    public MobileElement getSquareButton() {
+        return squareButton;
+    }
 
-    public MobileElement getRoundedSquareButton() { return roundedSquareButton; }
+    public MobileElement getRoundedSquareButton() {
+        return roundedSquareButton;
+    }
 
-    public MobileElement getRoundButton() { return roundButton; }
+    public MobileElement getRoundButton() {
+        return roundButton;
+    }
 
-    public MobileElement getFullScreenButton() { return fullScreenButton; }
+    public MobileElement getFullScreenButton() {
+        return fullScreenButton;
+    }
+
+    public MobileElement getBackgroundButton() {
+        return backgroundButton;
+    }
+
+    public MobileElement getStopwatchColor1() {
+        return colorPaletteElement1;
+    }
+
+    public MobileElement getStopwatchColor2() {
+        return colorPaletteElement2;
+    }
+
+    public MobileElement getStopwatchColor3() {
+        return colorPaletteElement3;
+    }
+
+    public MobileElement getDigitsColorPaletteElement() {
+        return digitsColorPaletteElement;
+    }
 }

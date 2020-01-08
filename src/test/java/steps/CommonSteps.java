@@ -36,7 +36,7 @@ public class CommonSteps extends AbstractCommonStep {
     public CommonSteps getOrientation(String expectedOrientation) {
         String actualOrientation = driver
                 .getOrientation().toString();
-        assertThat(String.format("Expected orientation is %s, but actiual is " +
+        assertThat(String.format("Expected orientation is %s, but actual is " +
                         "%s", expectedOrientation, actualOrientation),
                 actualOrientation.equals
                         (expectedOrientation));
