@@ -111,3 +111,5 @@ sftp-config.json.DS_Store
 #
 .gitattributes
 Stopwatch_tests.iml
+target
+allure-results
