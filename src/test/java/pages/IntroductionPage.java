@@ -26,7 +26,11 @@ public class IntroductionPage extends AbstractPage {
         return rateButton;
     }
 
-    public MobileElement getSupportButton() { return supportButton; }
+    public MobileElement getSupportButton() {
+        return supportButton;
+    }
 
-    public MobileElement getLaterButton() { return laterButton; }
+    public MobileElement getLaterButton() {
+        return laterButton;
+    }
 }

@@ -1,36 +1,29 @@
 package tests;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeTest;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.Test;
-import steps.IntroductionPageSteps;
-import steps.PermissionPageSteps;
-import steps.StopwatchPageSteps;
+
+import java.io.File;
+import java.io.IOException;
 
 public class ChangeBackgroundColorTest extends AbstractStopwatchTest {
 
-    private StopwatchPageSteps stopwatchPageSteps;
-    private PermissionPageSteps permissionPageSteps;
-    private IntroductionPageSteps introductionPageSteps;
-
-    @BeforeTest
-    public void setUp() {
-        stopwatchPageSteps = new StopwatchPageSteps(driver);
-        permissionPageSteps = new PermissionPageSteps(driver);
-        introductionPageSteps = new IntroductionPageSteps(driver);
-    }
-
     @Test(description = " [TC 8] Change background mode")
-    public void changeToSquare() throws InterruptedException {
+    public void changeBackgroundColorTest() throws InterruptedException {
+        accessPageSteps.checkPageDisplayed().tapAllowButton();
+        updatePageSteps.checkPageDisplayed().tapOkButton();
         permissionPageSteps.checkPageDisplayed().tapAllowButton();
         introductionPageSteps.checkPageDisplayed().tapLaterButton();
         stopwatchPageSteps.tapSettingsButton();
         stopwatchPageSteps.tapBackgroundButton();
-        Thread.sleep(1000);
-    }
 
-    @AfterMethod
-    public void restartApp() {
-        driver.resetApp();
+        File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(file, new File("src/test/resources/Screenshots/ColorTest.jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

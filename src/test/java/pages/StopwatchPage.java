@@ -4,23 +4,18 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
-import java.util.Random;
-
 /**
  * A page representing the main stopwatch page
  */
 public class StopwatchPage extends AbstractPage {
 
-    public static final String shapeViewGroupXpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/" +
-            "android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.LinearLayout[1]/" +
+    public static final String shapeViewGroupXpath = "//android.widget.LinearLayout[1]/" +
             "android.widget.LinearLayout[3]/android.widget.LinearLayout";
 
-    public static final String colorPaletteXpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/" +
-            "android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.LinearLayout[1]/" +
+    public static final String colorPaletteXpath = "//android.widget.LinearLayout[1]/" +
             "android.widget.LinearLayout[1]/android.widget.LinearLayout";
 
-    public static final String digitsColorPaletteXpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/" +
-            "android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.LinearLayout[1]/" +
+    public static final String digitsColorPaletteXpath = "//android.widget.LinearLayout[1]/" +
             "android.widget.LinearLayout[2]/android.widget.LinearLayout[8";
 
     public static final String color1Xpath = colorPaletteXpath + "[80]";
@@ -117,4 +112,5 @@ public class StopwatchPage extends AbstractPage {
     public MobileElement getDigitsColorPaletteElement() {
         return digitsColorPaletteElement;
     }
+
 }
