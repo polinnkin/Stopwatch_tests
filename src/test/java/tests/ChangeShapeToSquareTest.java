@@ -3,12 +3,7 @@ package tests;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import steps.IntroductionPageSteps;
-import steps.PermissionPageSteps;
-import steps.StopwatchPageSteps;
 
 import java.io.File;
 import java.io.IOException;

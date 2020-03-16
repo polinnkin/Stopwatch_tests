@@ -21,7 +21,7 @@ public class ChangeBackgroundColorTest extends AbstractStopwatchTest {
 
         File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(file, new File("src/test/resources/Screenshots/ColorTest.jpg"));
+            FileUtils.copyFile(file, new File("src/test/resources/Screenshots/ChangeBackgroundColorTest.jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -16,7 +16,7 @@ public class StopwatchPage extends AbstractPage {
             "android.widget.LinearLayout[1]/android.widget.LinearLayout";
 
     public static final String digitsColorPaletteXpath = "//android.widget.LinearLayout[1]/" +
-            "android.widget.LinearLayout[2]/android.widget.LinearLayout[8";
+            "android.widget.LinearLayout[2]/android.widget.LinearLayout[8]";
 
     public static final String color1Xpath = colorPaletteXpath + "[80]";
 
